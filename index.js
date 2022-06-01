@@ -35,24 +35,32 @@ export default (ReadwisePluginElement) => ({
         outerDiv.id = 'dictionary-term';
 
         const title = document.createElement('h2');
+        title.style.marginTop = '8px';
         title.innerText = term;
         outerDiv.appendChild(title);
 
         const definitionsContainer = document.createElement('div');
+        definitionsContainer.style.flex = '1';
+        definitionsContainer.style.overflow = 'auto';
         payload.forEach((word) => {
           word.meanings.forEach((meaning) => {
             const meaningContainer = document.createElement('div');
             const ruler = document.createElement('hr');
+            ruler.style.borderColor = 'rgba(0,0,0,0.05)';
 
             const pos = document.createElement('span');
             pos.innerText = meaning.partOfSpeech;
+            pos.style.fontSize = '14px';
+            pos.style.fontWeight = '700';
             const definitionsList = document.createElement('ol');
             definitionsList.style.listStyle = 'numeric';
             definitionsList.style.marginLeft = '10px';
-            definitionsList.style.padding = '5px';
+            definitionsList.style.padding = '5px 15px';
             meaning.definitions.forEach((definition) => {
               const def = document.createElement('li');
               def.innerText = definition.definition;
+              def.style.margin = '4px 0';
+              def.style.fontSize = '14px';
               definitionsList.appendChild(def);
             });
             meaningContainer.appendChild(ruler);
@@ -64,6 +72,7 @@ export default (ReadwisePluginElement) => ({
         const closeButton = document.createElement('button');
         closeButton.innerText = 'Close';
         closeButton.style.marginTop = '20px';
+        closeButton.style.maxWidth = '50px';
         closeButton.addEventListener('click', async (event) => {
           console.log('close clicked');
           event.stopPropagation();
@@ -84,6 +93,10 @@ export default (ReadwisePluginElement) => ({
           border-radius: 10px;
           max-height: 400px;
           overflow: scroll;
+          box-shadow: 0 5px 40px rgb(0 0 0 / 10%);
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
         }
         `;
         outerDiv.appendChild(styles);
