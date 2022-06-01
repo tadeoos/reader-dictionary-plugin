@@ -13,7 +13,10 @@ export default (ReadwisePluginElement) => ({
         event.stopImmediatePropagation();
         event.stopPropagation();
       });
+      const li = document.createElement('li');
+      li.classList.add("subPopoverListItem")
       const button = document.createElement('button');
+      button.classList.add("subPopoverButton")
       button.innerText = 'Define';
       button.addEventListener('click', async () => {
         console.log('clicked');
@@ -87,7 +90,8 @@ export default (ReadwisePluginElement) => ({
 
         document.body.appendChild(outerDiv);
       });
-      this.appendChild(button);
+      li.appendChild(button)
+      this.appendChild(li);
     }
 
     disconnectedCallback() {
