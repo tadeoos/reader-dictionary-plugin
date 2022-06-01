@@ -1,0 +1,20 @@
+{
+  "name": "reader-dictionary-plugin",
+  "version": "1.0.0",
+  "description": "Quickly lookup word definitions while reading. English only.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tadeoos/reader-dictionary-plugin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tadeoos/reader-dictionary-plugin/issues"
+  },
+  "homepage": "https://github.com/tadeoos/reader-dictionary-plugin#readme"
+}
